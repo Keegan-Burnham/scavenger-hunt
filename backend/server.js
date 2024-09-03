@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000; // Default to 3000 for local development
 
 app.use(cors());
 app.use(express.json());
@@ -63,6 +63,6 @@ app.get('/riddle/space-odyssey', (req, res) => {
 // Use routes
 app.use('/api/scores', scoreRoutes);
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
