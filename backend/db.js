@@ -1,11 +1,12 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
 // Create a connection to the database
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Qn24O!POQ22JlS&ut&ANzn!xhy*ZmS', // replace with your MySQL password
-  database: 'scavenger_hunt'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '', // Provide a default if not set
+  database: process.env.DB_NAME || 'scavenger_hunt'
 });
 
 // Connect to the database
