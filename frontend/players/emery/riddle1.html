@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team A - Riddle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #hintsContainer {
+            margin-top: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+        .hint {
+            color: #d9534f;
+            margin-top: 10px;
+        }
+        .button-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 20px; /* Space between buttons */
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 5px 15px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+        #image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Emery - Riddle Challenge</h1>
+
+<!-- Static Riddle Text -->
+<div id="riddleContainer">
+    <img id="image" src="/images/lockPuzzle" alt="Riddle Image">
+</div>
+
+<!-- Input field for answer code -->
+<input type="text" id="answerInput" placeholder="Enter the code here" />
+
+<div class="button-container">
+    <!-- Submit button -->
+    <button class="btn" onclick="checkAnswer()">Submit Code</button>
+
+    <!-- Button to reveal hints -->
+    <button class="btn" id="hintButton" onclick="revealHint()">Reveal Hint</button>
+
+    <!-- Hints section (now directly under the submit area) -->
+    <div id="hintsContainer">
+        <!-- Hints will be added here dynamically -->
+    </div>
+
+</div>
+
+<!-- Message display for feedback -->
+<p id="message"></p>
+
+<script>
+    // Variables for hint management
+    const hints = [
+        "Try counting how many digits there are",
+        "More than a code, it’s a personal key, though not for a lock or a door, but for those you wish to reach.",
+        "Dial this string to hear a familiar voice, whether near or far; it’s not just noise.",
+        "You see it on business cards, ads, and your screen. A number to call—it’s exactly what it seems."
+    ];
+    let hintIndex = 0;
+    let points = 500; // Starting points for the riddle
+    const penalty = 100; // Points deducted per hint
+
+    // Function to check the answer
+    function checkAnswer() {
+        const answerInput = document.getElementById('answerInput').value.trim();
+        const correctCode = "23465"; // Static correct code for this riddle (change per team/riddle)
+        
+        if (answerInput === correctCode) {
+            alert('Correct Code! Points Awarded: ' + points);
+            updateScore(points); // Update score in the backend
+            // Redirect to the next riddle or display completion message
+        } else {
+            alert('Incorrect Code. Try again.');
+        }
+    }
+
+    // Function to reveal hints
+    function revealHint() {
+        if (hintIndex < hints.length) {
+            const hintLabel = `Hint ${hintIndex + 1}:`; // Label each hint sequentially
+            const hintText = hints[hintIndex];
+            const hintContainer = document.getElementById('hintsContainer');
+
+            // Create a new hint element and append it to the hints container
+            const newHint = document.createElement('div');
+            newHint.className = 'hint';
+            newHint.innerHTML = `<strong>${hintLabel}</strong> ${hintText}`;
+            
+            hintContainer.appendChild(newHint); // Add the new hint below the previous ones
+
+            hintIndex++;
+            points -= penalty; // Deduct points each time a hint is shown
+        } else {
+            alert('No more hints available!');
+        }
+    }
+
+    // Function to update the team's score on the server
+    async function updateScore(pointsToAdd) {
+        try {
+            const response = await fetch('http://localhost:3000/api/scores/update', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ teamId: 3, points: pointsToAdd }) // Replace teamId with the correct ID
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to update score');
+            }
+        } catch (error) {
+            console.error('Error updating score:', error);
+        }
+    }
+</script>
+
+</body>
+</html>

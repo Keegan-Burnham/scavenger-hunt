@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Scavenger Hunt Scoreboard</h1>
+<table id="scoreboard">
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody id="scoreTableBody">
+        <!-- Scores will be populated here -->
+    </tbody>
+</table>
+
+<script>
+    async function fetchScores() {
+        try {
+            const response = await fetch('http://localhost:3000/api/scores');
+            const scores = await response.json();
+            const scoreTableBody = document.getElementById('scoreTableBody');
+
+            scoreTableBody.innerHTML = ''; // Clear existing rows
+
+            scores.forEach(team => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${team.name}</td><td>${team.score}</td>`;
+                scoreTableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Error fetching scores:', error);
+        }
+    }
+
+    // Fetch scores every 5 seconds to keep the table updated
+    setInterval(fetchScores, 5000);
+    fetchScores();
+</script>
+
+</body>
+</html>
