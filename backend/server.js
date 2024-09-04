@@ -23,6 +23,10 @@ app.use('/images/countryImage', express.static(path.join(__dirname, '../frontend
 
 // Riddle 1
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+})
+
 app.get('/riddle/sparkling-sky-8972', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/players/bella/riddle1.html'));
 });
