@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Blue, Grady - Riddle 5</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,21 +33,19 @@
             font-size: 16px;
             width: 150px;
         }
-
-        #image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Blue, Grady - Riddle 5</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <p id="riddleText">I’m a hidden nook with a subtle glide,<br>
+        A secret keeper with things inside.<br>
+        No hinges or locks, just quiet repose,<br>
+        A gentle tug will break my spell,<br>
+        What am I? Can you tell?<br></p>
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +71,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "I’m found in desks and cabinets, often hidden from view.",
+        "I can hold many items like pens, clothes, or tools.",
+        "You have to pull me out to see what’s inside.",
+        "I’m part of the furniture, sliding in and out without a door."
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +83,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "01457"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/amber-wave-9871"
         } else {
             alert('Incorrect Code. Try again.');
         }

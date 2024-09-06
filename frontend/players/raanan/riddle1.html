@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Red, Raanan - Riddle</title>
+    <title>Team Gold, Raanan - Riddle 1</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,7 +43,7 @@
 </head>
 <body>
 
-<h1>Team Red, Raanan - Riddle Challenge</h1>
+<h1>Team Gold, Raanan - Riddle 1</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
@@ -90,7 +90,7 @@
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            // Redirect to the next riddle or display completion message
+            window.location.href = "/riddle/space-odyssey"
         } else {
             alert('Incorrect Code. Try again.');
         }

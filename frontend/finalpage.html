@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #2c3e50;
+        }
+        .confetti {
+            font-size: 5em;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .scoreboard {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #2c3e50;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .scoreboard h2 {
+            margin-bottom: 10px;
+        }
+        .team-list {
+            list-style: none;
+            padding: 0;
+        }
+        .team-list li {
+            margin: 8px 0;
+            font-size: 1.2em;
+        }
+        .restart-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .restart-btn:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Congratulations, Teams!</h1>
+    <div class="confetti">🎉</div>
+    <p>You’ve successfully completed the scavenger hunt!</p>
+
+    <div class="scoreboard">
+        <h2>Run to tell SirMrHeadGameMasterSir to get your extra points!</h2>
+
+    </div>
+
+    <button class="restart-btn" onclick="window.location.href='/'">Scoreboard</button>
+
+</body>
+</html>

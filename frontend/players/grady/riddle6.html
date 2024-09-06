@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Blue, Grady - Riddle 6</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,11 +43,15 @@
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Blue, Grady - Riddle 6</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <p id="riddleText">Look up the words of wisdom from Chapter 2, Verses 8 & 9 of the book of...</p>
+</div>
+
+<div id="riddleContainer">
+    <img id="image" src="/images/countryImage" alt="Riddle Image">
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +77,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "Transcontinental country between Europe and Asia, neighbor of Greece.",
+        "What is the main point of this bible verse?",
+        "Where in the house would Grace be hanging?",
+        "Try checking the decoration with Grace written on it."
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +89,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "78140"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/cyan-ocean-4598"
         } else {
             alert('Incorrect Code. Try again.');
         }

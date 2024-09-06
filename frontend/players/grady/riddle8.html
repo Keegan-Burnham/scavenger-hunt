@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Blue, Grady - Riddle 8</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,21 +33,15 @@
             font-size: 16px;
             width: 150px;
         }
-
-        #image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Blue, Grady - Riddle 8</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <p id="riddleText">In a realm of four domains, I dwell in silent order, where numbered heralds and sovereigns hold their intricate dance. With twelve of the court I am the keeper of chance and fate. What am I?</p>
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +67,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "Within my array, four symbols embody the elements of life: one evokes warmth and affection, another signifies wealth and splendor, a third represents growth and endurance, while the fourth uncovers secrets and transformation.",
+        "You might find me useful in games of chance and strategy.",
+        "I am a collection of rectangular pieces with varied insignia.",
+        "I am commonly shuffled and dealt for various card games."
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +79,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "31278"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/ivory-sand-3984"
         } else {
             alert('Incorrect Code. Try again.');
         }

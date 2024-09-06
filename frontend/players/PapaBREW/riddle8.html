@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Red, PapaBREW - Riddle 8</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,11 +43,11 @@
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Red, PapaBREW (He's team Liverpool Red) - Riddle 8</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <img id="image" src="/images/lockPuzzle" alt="Riddle Image">
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +73,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "Try counting how many digits there are",
+        "More than a code, it’s a personal key, though not for a lock or a door, but for those you wish to reach.",
+        "Dial this string to hear a familiar voice, whether near or far; it’s not just noise.",
+        "You see it on business cards, ads, and your screen. A number to call—it’s exactly what it seems."
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +85,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "32839"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/pearl-drop-5423"
         } else {
             alert('Incorrect Code. Try again.');
         }
@@ -123,7 +123,7 @@
             const response = await fetch('http://localhost:3000/api/scores/update', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ teamId: 2, points: pointsToAdd }) // Replace teamId with the correct ID
+                body: JSON.stringify({ teamId: 5, points: pointsToAdd }) // Replace teamId with the correct ID
             });
 
             if (!response.ok) {

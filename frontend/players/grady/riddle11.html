@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Blue, Grady - Riddle 11</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,11 +43,11 @@
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Blue, Grady "NeverSkipLegDay" Brewer - Riddle 11</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <p id="riddleText">(67.779916, -17.433672) Uh oh! We appear to be in the middle of the ocean! Maybe let's shift some things around…</p>
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +73,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "Julius was such a fantastic general. How can he help us here!?",
+        "How would we decode a message sent from Julius Caesar?",
+        "Hmmmm… 3. There’s just something about that number.",
+        "Try adding or subtracting 3 from each number in the coordinates."
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +85,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "39125"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/icy-blast-5612"
         } else {
             alert('Incorrect Code. Try again.');
         }

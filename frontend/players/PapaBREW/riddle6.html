@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Red, PapaBREW - Riddle 6</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,7 +43,7 @@
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Red, PapaBREW - Riddle 6</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
@@ -85,12 +85,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "81374"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/bronze-shield-7852"
         } else {
             alert('Incorrect Code. Try again.');
         }
@@ -123,7 +123,7 @@
             const response = await fetch('http://localhost:3000/api/scores/update', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ teamId: 2, points: pointsToAdd }) // Replace teamId with the correct ID
+                body: JSON.stringify({ teamId: 5, points: pointsToAdd }) // Replace teamId with the correct ID
             });
 
             if (!response.ok) {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Blue, Grady - Riddle 1</title>
+    <title>Team Gold, Raanan - Riddle 10</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,20 +34,21 @@
             width: 150px;
         }
 
-        #image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
 
-<h1>Team Blue, Grady - Riddle 1</h1>
+<h1>Team Gold, Raanan - Riddle 10</h1>
 
 <!-- Static Riddle Text -->
 <div id="riddleContainer">
-    <img id="image" src="/images/tiltPuzzle" alt="Riddle Image">
+    <p id="riddleText">The location of your answer is at DW SD IV… hmm well that may be a little confusing, but don’t worry, I will playfair”.<br><br>
+        K  E  Y  W  O<br>
+        R  D  A  B  C<br>
+        F  G  H  I  L<br>
+        M  N  P  Q  S<br>
+        T  U  V  X  Z</p>
+
 </div>
 
 <!-- Input field for answer code -->
@@ -73,10 +74,10 @@
 <script>
     // Variables for hint management
     const hints = [
-        "To uncover the truth, you'll need to change your viewpoint.",
-        "The image will become clear when you tilt it.",
-        "Try rotating or tilting the picture to see the hidden message or image.",
-        "Come to SirMrHeadGameMaster sir for help."
+        "The name of the cipher you need to use is in the question",
+        "Only work with two letters at a time, make a rectangle between them and take the letter in the same row",
+        "For example: DW will translate to BE",
+        "SD will translate to NC, go to SirMrHeadGameMasterSir"
     ];
     let hintIndex = 0;
     let points = 500; // Starting points for the riddle
@@ -85,12 +86,12 @@
     // Function to check the answer
     function checkAnswer() {
         const answerInput = document.getElementById('answerInput').value.trim();
-        const correctCode = "67355"; // Static correct code for this riddle (change per team/riddle)
+        const correctCode = "29510"; // Static correct code for this riddle (change per team/riddle)
         
         if (answerInput === correctCode) {
             alert('Correct Code! Points Awarded: ' + points);
             updateScore(points); // Update score in the backend
-            window.location.href = "/riddle/mystery-museum"
+            window.location.href = "/riddle/sandstorm-1258"
         } else {
             alert('Incorrect Code. Try again.');
         }
@@ -123,7 +124,7 @@
             const response = await fetch('http://localhost:3000/api/scores/update', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ teamId: 2, points: pointsToAdd }) // Replace teamId with the correct ID
+                body: JSON.stringify({ teamId: 4, points: pointsToAdd }) // Replace teamId with the correct ID
             });
 
             if (!response.ok) {
